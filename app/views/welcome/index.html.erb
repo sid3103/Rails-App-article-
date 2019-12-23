@@ -1,0 +1,59 @@
+<%= stylesheet_link_tag "application", :media => "all" %>
+<%= render 'layouts/navigation' %>
+<h1 class="article-body">Welcome To Articles</h1>
+<div class="limiter">
+		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+			<div class="wrap-login100 p-t-30 p-b-50">
+				
+				 <table class = "table table-bordered table-striped">
+   <thead>
+      <tr>
+         <th>Name</th>
+         <th>Download Link</th>
+         <th> </th>
+      </tr>
+   </thead>
+   
+   <tbody>
+      <% @resumes.each do |resume| %>
+         
+         <tr>
+            <td><%= resume.name %></td>
+            <td><%= link_to "Download Resume", resume.attachment_url %></td>
+            <td><%= button_to "Delete",art_resume_path(resume.art_id, resume.id),  method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{resume.name}?" %></td>
+         </tr>
+         
+      <% end %>
+   </tbody>
+   
+</table>
+				
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+ <!--  <#%= link_to 'My Blog', controller: 'arts' %> ||
+
+<#%= link_to 'New art', new_art_path %>
+ -->
+
+
